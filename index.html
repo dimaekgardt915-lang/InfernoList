@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Minecraft Bedrock Status</title>
+</head>
+<body>
+    <h1>Minecraft Bedrock Server</h1>
+    <p>IP сервера: 92.38.222.133:19132</p>
+    <p id="status">Проверка...</p>
+
+    <script>
+        async function checkServer() {
+            try {
+                const response = await fetch(`https://api.mcsrvstat.us/bedrock/2/92.38.222.133:19132`);
+                const data = await response.json();
+
+                if(data.online) {
+                    document.getElementById("status").innerText = 
+                        `🟢 Онлайн: ${data.players.online || 0} / ${data.players.max || '??'}`;
+                } else {
+                    document.getElementById("status").innerText = "🔴 Сервер оффлайн";
+                }
+            } catch(err) {
+                console.log(err);
+                document.getElementById("status").innerText = "⚠ Ошибка запроса";
+            }
+        }
+
+        checkServer();
+        setInterval(checkServer, 30000); // обновление каждые 30 секунд
+    </script>
+</body>
+</html>
