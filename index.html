@@ -500,34 +500,6 @@
             padding-top: 24px;
         }
 
-        .domain-guide {
-            background: linear-gradient(135deg, #1a1f2e, #0f1119);
-            border-radius: 24px;
-            padding: 24px;
-            margin: 40px 0 20px;
-            border: 1px solid #3b82f6;
-        }
-
-        .domain-guide h4 {
-            color: #facc15;
-            margin-bottom: 16px;
-            font-size: 18px;
-        }
-
-        .domain-guide ol, .domain-guide ul {
-            margin-left: 20px;
-            color: #cbd5e6;
-            line-height: 1.8;
-        }
-
-        .domain-guide code {
-            background: #0a0c14;
-            padding: 4px 8px;
-            border-radius: 8px;
-            font-family: monospace;
-            color: #facc15;
-        }
-
         @media (max-width: 720px) {
             .info-grid {
                 grid-template-columns: 1fr;
@@ -616,6 +588,18 @@
             font-weight: 700;
             font-size: 18px;
             color: #fff;
+        }
+
+        .app-date {
+            font-size: 11px;
+            color: #7e849b;
+            margin-top: 6px;
+        }
+
+        .empty-state {
+            text-align: center;
+            color: #7e849b;
+            padding: 40px;
         }
 
         .message {
@@ -723,26 +707,6 @@
             <button type="submit" class="submit-btn">Отправить анкету</button>
         </form>
         <div id="formMessage" class="message"></div>
-    </div>
-
-    <!-- Инструкция по подключению домена -->
-    <div class="domain-guide">
-        <h4>🔗 Как подключить домен ice-mine.ru (reg.ru)</h4>
-        <ol>
-            <li><strong>Загрузите файл на хостинг</strong> — сохраните этот код как <code>index.html</code> и загрузите в папку <code>public_html</code> или <code>www</code> на вашем хостинге.</li>
-            <li><strong>Зайдите в панель управления reg.ru</strong> → перейдите в раздел <strong>«Управление доменами»</strong>.</li>
-            <li><strong>Настройте DNS-записи</strong> (если хостинг не reg.ru):
-                <ul>
-                    <li>Выберите ваш домен <code>ice-mine.ru</code> → «Управление DNS».</li>
-                    <li>Добавьте <strong>A-запись</strong>: <code>@</code> → IP-адрес вашего хостинга (например, <code>185.130.xx.xx</code>).</li>
-                    <li>Добавьте <strong>A-запись</strong> для <code>www</code> → тот же IP.</li>
-                    <li>Если используете хостинг reg.ru — можно выбрать <strong>«Привязать к хостингу»</strong> автоматически.</li>
-                </ul>
-            </li>
-            <li><strong>Подождите обновления DNS</strong> (от 5 минут до 24 часов).</li>
-            <li><strong>Проверьте</strong> — откройте <code>https://ice-mine.ru</code> или <code>http://ice-mine.ru</code>.</li>
-        </ol>
-        <p style="margin-top: 12px; color: #facc15;">💡 <strong>Совет:</strong> Если у вас есть SSL-сертификат, настройте автоматическое перенаправление с http на https.</p>
     </div>
 
     <div class="footer-links">
