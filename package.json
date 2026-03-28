@@ -1,0 +1,30 @@
+{
+  "name": "atlas-jarvis-style",
+  "version": "1.0.0",
+  "description": "Атлас - голосовой помощник в стиле Jarvis",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "dependencies": {
+    "electron": "^28.0.0",
+    "axios": "^1.6.0",
+    "electron-builder": "^24.9.1"
+  },
+  "build": {
+    "appId": "com.atlas.assistant",
+    "productName": "Атлас",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "icon.ico"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "icon.icns"
+    }
+  }
+}
